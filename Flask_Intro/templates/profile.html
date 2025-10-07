@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section fade-in">
+    <h1 class="section-title">Profile</h1>
+    <div class="profile-container">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Rasmine Blas" class="profile-pic">
+        <div class="profile-info">
+            <p>Hello! I'm <b>Rasmine Blas</b>, an aspiring computer engineer passionate about technology, AI, and software development.</p>
+            <p>I specialize in <b>Python</b> and <b>data analytics</b>, with growing interests in <b>AI algorithms</b> and <b>mechatronics systems</b>. I love building smart solutions and exploring how software interacts with hardware.</p>
+            <p>Outside academics, I juggle roles as a student assistant, organizer, daughter, and sister — constantly improving time management and leadership skills.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

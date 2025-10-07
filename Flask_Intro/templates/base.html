@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else "Rasmine Blas - Portfolio" }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/website logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="/">🏠</a></li>
+            <li><a href="/profile">👩‍💻</a></li>
+            <li><a href="/contact">📩</a></li>
+            <li><a href="/areaOfcircle">⚪</a></li>
+            <li><a href="/areaOfTriangle">🔺</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="fade-in">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='scroll.animate.js') }}"></script>
+</body>
+</html>
