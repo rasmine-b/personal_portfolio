@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>circle</h2>
-<form method="POST">
-    <label for="radius">Enter radius:</label>
-    <input type="number" name="radius" id="radius" step="any" required>
-    <button type="submit">Calculate</button>
-</form>
+<section class="section fade-in">
+    <h2>Area of Circle</h2>
+    <form method="POST">
+        <label for="radius">Enter radius:</label>
+        <input type="number" name="radius" id="radius" step="any" required>
+        <button type="submit">Calculate</button>
+    </form>
 
-{% if area %}
-<p>Area: {{ area }}</p>
-{% endif %}
+    {% if area %}
+    <p>Area: {{ area }}</p>
+    {% endif %}
+</section>
 {% endblock %}

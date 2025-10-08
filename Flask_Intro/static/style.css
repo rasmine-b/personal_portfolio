@@ -232,3 +232,8 @@ nav ul li a:hover {
     text-align: center;
   }
 }
+
+/* hide navbar on the Home page if you make Home extend base.html later */
+body.home nav {
+  display: none;
+}

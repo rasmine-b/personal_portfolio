@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>triangle</h2>
-<form method="POST">
-    <label for="base">Enter base:</label>
-    <input type="number" name="base" id="base" step="any" required>
-    <label for="height">Enter height:</label>
-    <input type="number" name="height" id="height" step="any" required>
-    <button type="submit">Calculate</button>
-</form>
+<section class="section fade-in">
+    <h2>Area of Triangle</h2>
+    <form method="POST">
+        <label for="base">Enter base:</label>
+        <input type="number" name="base" id="base" step="any" required>
+        
+        <label for="height">Enter height:</label>
+        <input type="number" name="height" id="height" step="any" required>
+        
+        <button type="submit">Calculate</button>
+    </form>
 
-{% if area %}
-<p>Area: {{ area }}</p>
-{% endif %}
+    {% if area %}
+    <p>Area: {{ area }}</p>
+    {% endif %}
+</section>
 {% endblock %}
