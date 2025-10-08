@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Area of Triangle</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/profile">Profile</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/circle">Area of Circle</a></li>
-            <li><a href="/triangle">Area of Triangle</a></li>
-        </ul>
-    </nav>
+{% extends "base.html" %}
+{% block content %}
+<h2>triangle</h2>
+<form method="POST">
+    <label for="base">Enter base:</label>
+    <input type="number" name="base" id="base" step="any" required>
+    <label for="height">Enter height:</label>
+    <input type="number" name="height" id="height" step="any" required>
+    <button type="submit">Calculate</button>
+</form>
 
-    <section class="section">
-        <h1>Area of a Triangle</h1>
-        <form method="POST">
-            <label for="base">Enter base:</label>
-            <input type="number" step="any" name="base" required>
-            <label for="height">Enter height:</label>
-            <input type="number" step="any" name="height" required>
-            <button type="submit">Calculate</button>
-        </form>
-
-        {% if area is not none %}
-        <p>The area of the triangle with base {{ base }} and height {{ height }} is: <strong>{{ area }}</strong></p>
-        {% endif %}
-    </section>
-</body>
-</html>
+{% if area %}
+<p>Area: {{ area }}</p>
+{% endif %}
+{% endblock %}
