@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Convert to Uppercase</title>
-</head>
-<body>
-    <h1>Convert String to Uppercase</h1>
-
-    <form action="/works" method="post">
+{% extends "base.html" %}
+{% block content %}
+<section class="section fade-in">
+    <h1 class="section-title">Convert String to Uppercase</h1>
+    <form method="POST" action="/touppercase">
         <label for="inputString">Enter a string:</label>
-        <input type="text" id="inputString" name="inputString">
-        <input type="submit" value="Convert">
+        <input type="text" id="inputString" name="inputString" required>
+        <button type="submit">Convert</button>
     </form>
 
     {% if result %}
-    <p>Converted string: {{ result }}</p>
+    <p>Converted string: <strong>{{ result }}</strong></p>
     {% endif %}
-</body>
-</html>
+</section>
+{% endblock %}
