@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="section fade-in">
-    <h2>Convert Text to Uppercase</h2>
-    <form method="POST">
-        <label for="text">Enter text:</label>
-        <input type="text" name="text" id="text" required>
-        <button type="submit">Convert</button>
-    </form>
+    <div class="calc-container">
+        <h2>Convert Text to Uppercase</h2>
+        <form method="POST">
+            <input type="text" name="text" id="text" placeholder="Enter text" required>
+            <button type="submit">Convert</button>
+        </form>
 
-    {% if result %}
-    <p>Uppercase: {{ result }}</p>
-    {% endif %}
+        {% if result %}
+        <div class="calc-result">
+            Uppercase: {{ result }}
+        </div>
+        {% endif %}
+    </div>
 </section>
 {% endblock %}

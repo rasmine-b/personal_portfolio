@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="section fade-in">
-    <h2>Area of Triangle</h2>
-    <form method="POST">
-        <label for="base">Enter base:</label>
-        <input type="number" name="base" id="base" step="any" required>
-        
-        <label for="height">Enter height:</label>
-        <input type="number" name="height" id="height" step="any" required>
-        
-        <button type="submit">Calculate</button>
-    </form>
+    <div class="calc-container">
+        <h2>Area of Triangle</h2>
+        <form method="POST">
+            <input type="number" name="base" id="base" step="any" placeholder="Enter base" required>
+            <input type="number" name="height" id="height" step="any" placeholder="Enter height" required>
+            <button type="submit">Calculate</button>
+        </form>
 
-    {% if area %}
-    <p>Area: {{ area }}</p>
-    {% endif %}
+        {% if area %}
+        <div class="calc-result">
+            Area: {{ area }}
+        </div>
+        {% endif %}
+    </div>
 </section>
 {% endblock %}
