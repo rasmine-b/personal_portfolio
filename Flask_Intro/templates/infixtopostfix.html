@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section fade-in">
+  <div class="calc-container">
+    <h2>Infix ➜ Postfix Converter</h2>
+    <p style="color:#666;">Transform your expressions using the Shunting Yard Algorithm!</p>
+
+    <form method="POST">
+      <input type="text" name="expression" id="expression" placeholder="Enter infix (e.g. A + B * C)" required>
+      <button type="submit">Convert to Postfix</button>
+    </form>
+
+    {% if message %}
+    <p style="margin-top:15px; font-weight:600; color:#f472b6;">{{ message }}</p>
+    {% endif %}
+
+    {% if postfix %}
+    <div class="linkedlist-box fade-in">
+      <h3>Postfix Expression</h3>
+      <div class="linkedlist-display game-style">
+        {{ postfix }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Floating pastel shapes for a “game vibe” -->
+  <div class="floating-shape circle" style="top:85%; left:10%; width:60px; height:60px;"></div>
+  <div class="floating-shape square" style="top:75%; right:15%; width:50px; height:50px;"></div>
+</section>
+{% endblock %}

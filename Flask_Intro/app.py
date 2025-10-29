@@ -91,6 +91,48 @@ def linkedlist():
     result = " → ".join(linked_list) + " → X" if linked_list else "X (Empty List)"
     return render_template('linkedlist.html', title="Linked List", result=result, message=action_message)
 
+# Infix to Postfix Converter
+def infix_to_postfix(expression):
+    """Convert infix to postfix using Shunting Yard Algorithm"""
+    precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
+    output = []
+    stack = []
+
+    for token in expression.split():
+        if token.isalnum():  # Operand (A, B, C, etc.)
+            output.append(token)
+        elif token == '(':
+            stack.append(token)
+        elif token == ')':
+            while stack and stack[-1] != '(':
+                output.append(stack.pop())
+            stack.pop()  # Remove '('
+        else:
+            while stack and stack[-1] != '(' and precedence.get(token, 0) <= precedence.get(stack[-1], 0):
+                output.append(stack.pop())
+            stack.append(token)
+
+    while stack:
+        output.append(stack.pop())
+
+    return ' '.join(output)
+
+
+@app.route('/infixtopostfix', methods=['GET', 'POST'])
+def infixtopostfix():
+    postfix = None
+    message = ""
+
+    if request.method == 'POST':
+        expression = request.form['expression']
+        try:
+            postfix = infix_to_postfix(expression)
+            message = "Successfully converted!"
+        except Exception as e:
+            postfix = "Error in expression!"
+            message = f"Error: {e}"
+
+    return render_template('infixtopostfix.html', title="Infix to Postfix", postfix=postfix, message=message)
 
 if __name__ == '__main__':
     app.run(debug=True)

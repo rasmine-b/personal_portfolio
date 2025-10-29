@@ -357,3 +357,23 @@ button.danger:hover {
   margin-top: 10px;
   box-shadow: inset 0 3px 8px rgba(0,0,0,0.05);
 }
+
+/* Game Vibe Enhancements for Converter */
+.linkedlist-display.game-style {
+  display: inline-block;
+  padding: 20px 30px;
+  background: linear-gradient(120deg, #f9a8d4, #caffbf, #bdb2ff);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.linkedlist-display.game-style:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
