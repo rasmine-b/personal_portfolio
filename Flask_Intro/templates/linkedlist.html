@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section fade-in">
+  <div class="calc-container">
+    <h2>Linked List Simulator</h2>
+    <p style="color:#666;">Visualize how data moves in a linked list!</p>
+
+    <form method="POST">
+      <input type="text" name="value" id="value" placeholder="Enter data (e.g. 12 or Node A)">
+      
+      <div class="btn-group">
+        <button type="submit" name="action" value="add_beginning">Add at Beginning</button>
+        <button type="submit" name="action" value="add_end">Add at End</button>
+        <button type="submit" name="action" value="remove_beginning">Remove Beginning</button>
+        <button type="submit" name="action" value="remove_end">Remove End</button>
+        <button type="submit" name="action" value="clear_list" class="danger">Clear</button>
+      </div>
+    </form>
+
+    {% if message %}
+    <p style="margin-top:15px; font-weight:600; color:#f472b6;">{{ message }}</p>
+    {% endif %}
+
+    <div class="linkedlist-box fade-in">
+      <h3>Current Linked List</h3>
+      <div class="linkedlist-display">
+        {{ result }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

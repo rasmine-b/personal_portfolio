@@ -10,3 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
 });
+
+document.querySelectorAll('.linkedlist-display').forEach(el => {
+  el.classList.add('visible');
+});
